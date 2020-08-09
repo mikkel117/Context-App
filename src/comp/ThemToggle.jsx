@@ -1,14 +1,9 @@
-import React, { Component } from 'react'
+import React, { useContext } from 'react';
 import { TheamContext } from '../contexts/Theam';
 
-class ThemToggle extends Component {
-    static contextType = TheamContext
-    render() { 
-        const { toggleTheme } = this.context;
-        return ( 
-            <button onClick={ toggleTheme }>Toggle the them</button>
-         );
-    }
-}
- 
-export default ThemToggle;
+const ThemeToggle = () => {
+  const { toggleTheme } = useContext(TheamContext);
+  return <button onClick={toggleTheme}>Toggle the them</button>;
+};
+
+export default ThemeToggle;
